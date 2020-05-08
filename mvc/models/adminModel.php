@@ -45,5 +45,14 @@
                 return $result;
             }
         }
+        public function getOrder($idOrder){
+            $result=$this->conn->query("SELECT content,price,link_fb FROM tb_order where id_order='{$idOrder}'");
+            $data=$result->fetch_assoc();
+            return $data;
+        }
+        public function updateOrder($content,$price,$idorder){
+            $this->conn->query("UPDATE tb_order SET content='{$content}',price={$price} where id_order={$idorder}");
+            
+        }
     }
 ?>

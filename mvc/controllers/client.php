@@ -20,7 +20,6 @@ class client extends Controller
     public function
     default($param)
     {
-
         $Notices = $this->md->getNotices($this->user);
         if ($param == "") $data = $this->md->getAllListOrder($this->user);
         else if ($param == "unsent") $data = $this->md->getListUnsent($this->user);

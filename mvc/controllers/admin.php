@@ -50,5 +50,26 @@
             $Notices=$this->md->getNotices();
             $this->view('layoutadmin',['page'=>'managerbill','data'=>$data,'notice'=>$Notices]);
         }   
+        public function edit($idOrder){
+            if(empty($_SESSION['user'])){
+                header("Location:http://{$GLOBALS['HOST']}/webapp1/login");
+            }
+            $data=$this->md->getOrder($idOrder);
+            $Notices=$this->md->getNotices();
+            $this->view('layoutadmin',['page'=>'manageredit','idorder'=>$idOrder,'notice'=>$Notices,'dataOrder'=>$data]);
+
+        }
+        public function editOrder(){
+            if (!empty($_POST['contentorder']) && !empty($_POST['price'])) {
+                $content = trim($_POST['contentorder']);
+                
+                $price = trim($_POST['price']);
+                $this->md->updateOrder($content, $price, $_POST['iddon']);
+                echo "<script>
+                    alert('Cập nhật thành công');
+                </script>";
+                header("Location: http://{$GLOBALS['HOST']}/webapp1/admin");
+            }
+        }
     }
 ?>

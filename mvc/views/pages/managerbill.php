@@ -140,9 +140,10 @@
                                 $type = "send";
                                 if ($status[$idx] == "nhận tiền") $type = "payed";
                                 echo "<a href='http://{$GLOBALS['HOST']}/webapp1/admin/{$type}/{$row['id_order']}' id='status{$row['id_order']}' class='m-2 btn btn-success'>{$status[$idx]}</a>";
+
                             }
-                            echo "<a href='http://{$GLOBALS['HOST']}/webapp1/admin/cancel/{$row['id_order']}' class='m-2 btn btn-danger'>Hủy đơn</a>";
-                            echo "</td></tr>";
+                            echo "<a href='http://{$GLOBALS['HOST']}/webapp1/admin/edit/{$row['id_order']}' class='m-2 btn btn-success'>Sửa đơn</a>";
+                            echo "<a href='http://{$GLOBALS['HOST']}/webapp1/admin/cancel/{$row['id_order']}' class='m-2 btn btn-danger'>Hủy đơn</a>";  
                         }
                     }
                     ?>
