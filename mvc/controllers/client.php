@@ -69,22 +69,20 @@ class client extends Controller
             $linkfb = trim($_POST['linkfb']);
             $price = trim($_POST['price']);
             $this->md->createorder($content, $price, $linkfb, $this->user);
-            ////////////// Send massage//////////////////////////
-            // $ch = curl_init(); 
-
-            // //** Bước 2: Thiết lập các tuỳ chọn
-            // // Thiết lập URL trong request
-            // curl_setopt($ch, CURLOPT_URL, "https://fchat.vn/api/send?user_id=4051670644857979&block_id=5eb28882f0126e1cb226604f&token=04b06a0b48add9f97b661b16a0bcc48d52ac1ca7"); 
+            //////////// Send massage//////////////////////////
+            $ch = curl_init(); 
+            //** Bước 2: Thiết lập các tuỳ chọn
+            // Thiết lập URL trong request
+            curl_setopt($ch, CURLOPT_URL, "https://fchat.vn/api/send?user_id=4051670644857979&block_id=5eb594226c556b6c85200a37&token=04b06a0b48add9f97b661b16a0bcc48d52ac1ca7"); 
         
-            // // Thiết lập để trả về dữ liệu request thay vì hiển thị dữ liệu ra màn hình
-            // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+            // Thiết lập để trả về dữ liệu request thay vì hiển thị dữ liệu ra màn hình
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+            // ** Bước 3: thực hiện việc gửi request
+            $output = curl_exec($ch); 
+            echo $output; // hiển thị nội dung
         
-            // // ** Bước 3: thực hiện việc gửi request
-            // $output = curl_exec($ch); 
-            // echo $output; // hiển thị nội dung
-        
-            // // ** Bước 4 (tuỳ chọn): Đóng request để giải phóng tài nguyên trên hệ thống
-            // curl_close($ch);
+            // ** Bước 4 (tuỳ chọn): Đóng request để giải phóng tài nguyên trên hệ thống
+            curl_close($ch);
             echo "
                     <script>
                         alert('Tạo đơn thành công');
