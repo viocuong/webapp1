@@ -6,11 +6,11 @@
         {
             $this->md=$this->requireModel('adminModel');
             if(empty($_SESSION['user'])){
-                header("Location:http://{$GLOBALS['HOST']}/webapp/login");
+                header("Location:http://{$GLOBALS['HOST']}/webapp1/login");
             }
             else $user=$_SESSION['user'];
             if(!$this->md->isAdmin($user)){
-                header("Location:http://{$GLOBALS['HOST']}/webapp/client");
+                header("Location:http://{$GLOBALS['HOST']}/webapp1/client");
             }
         }
         public function default($param){
@@ -45,7 +45,7 @@
             $str=trim(htmlspecialchars(filter_var($_POST['search'],FILTER_SANITIZE_STRING)));
             $data=$this->md->getSearch($str);
             if(empty($_SESSION['user'])){
-                header("Location:http://{$GLOBALS['HOST']}/webapp/login");
+                header("Location:http://{$GLOBALS['HOST']}/webapp1/login");
             }
             $Notices=$this->md->getNotices();
             $this->view('layoutadmin',['page'=>'managerbill','data'=>$data,'notice'=>$Notices]);

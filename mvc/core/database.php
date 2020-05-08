@@ -2,9 +2,9 @@
     class DataBase{
         protected $conn;
         protected $servername="localhost";
-        protected $username="root";
-        protected $password="";
-        protected $dbname="appql";
+        protected $username="cuongnguyen";
+        protected $password="cuong28021999";
+        protected $dbname="appqlnew";
         function __construct()
         {
             if(!isset($conn)){

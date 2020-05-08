@@ -11,7 +11,7 @@
                 <span id="iconmenu" class="material-icons" style="vertical-align: middle;font-size:50px;">view_headline</span>
             </a>
         </div>
-        <form method="POST" class="col d-flex justify-content-end pr-3 pt-2 pb-2" action="http://<?php echo $GLOBALS['HOST']; ?>/webapp/client/search">
+        <form method="POST" class="col d-flex justify-content-end pr-3 pt-2 pb-2" action="http://<?php echo $GLOBALS['HOST']; ?>/webapp1/client/search">
             <input id="inp" type="search" name="search">
         </form>
         <!--HIDENT ------------------------------------------------------------------------->
@@ -30,7 +30,7 @@
             <ul class="p-2">
                 <li><a href="" class="btn-menu p-3">Doanh thu</a><span style="color: red;font-size: 10px">đang hoàn thiện</span></li>
                 <li><a href="" class="btn-menu p-3">Mặt hàng</a><span style="color: red;font-size: 10px"> đang hoàn thiện</span></li>
-                <li><a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp/logout" class="btn-menu p-3">Đăng xuất</a></li>
+                <li><a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp1/logout" class="btn-menu p-3">Đăng xuất</a></li>
             </ul>
         </nav>
 

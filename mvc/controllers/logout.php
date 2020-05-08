@@ -3,7 +3,7 @@
         public function default(){
             if(isset($_SESSION['user'])){
                 unset($_SESSION['user']);
-                header("Location:http://{$GLOBALS['HOST']}/webapp/login");
+                header("Location:http://{$GLOBALS['HOST']}/webapp1/login");
             }
         }
     }

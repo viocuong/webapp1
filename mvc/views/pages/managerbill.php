@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-4 p-0 d-flex">
-        <a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp/admin" class="button container p-3 d-flex justify-content-center">
+        <a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp1/admin" class="button container p-3 d-flex justify-content-center">
 
             <div class="row">
                 <div class="col align-self-center">
@@ -15,7 +15,7 @@
 
     </div>
     <div class="col-md-4 p-0 d-flex">
-        <a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp/admin/default/unsent" class="button container p-3 d-flex justify-content-center ">
+        <a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp1/admin/default/unsent" class="button container p-3 d-flex justify-content-center ">
             <div class="row">
                 <div class="col align-self-center">
                     <span class="material-icons">airport_shuttle</span>
@@ -41,7 +41,7 @@
 
     </div>
     <div class="col-md-4 p-0 d-flex">
-        <a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp/admin/default/yetpay" class="button container p-3 d-flex justify-content-center ">
+        <a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp1/admin/default/yetpay" class="button container p-3 d-flex justify-content-center ">
 
             <div class="row">
                 <div class="col align-self-center">
@@ -139,9 +139,9 @@
                             for ($idx = 0; $idx < count($status); $idx++) {
                                 $type = "send";
                                 if ($status[$idx] == "nhận tiền") $type = "payed";
-                                echo "<a href='http://{$GLOBALS['HOST']}/webapp/admin/{$type}/{$row['id_order']}' id='status{$row['id_order']}' class='m-2 btn btn-success'>{$status[$idx]}</a>";
+                                echo "<a href='http://{$GLOBALS['HOST']}/webapp1/admin/{$type}/{$row['id_order']}' id='status{$row['id_order']}' class='m-2 btn btn-success'>{$status[$idx]}</a>";
                             }
-                            echo "<a href='http://{$GLOBALS['HOST']}/webapp/admin/cancel/{$row['id_order']}' class='m-2 btn btn-danger'>Hủy đơn</a>";
+                            echo "<a href='http://{$GLOBALS['HOST']}/webapp1/admin/cancel/{$row['id_order']}' class='m-2 btn btn-danger'>Hủy đơn</a>";
                             echo "</td></tr>";
                         }
                     }

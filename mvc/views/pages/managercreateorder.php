@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-3 p-0 d-flex">
-        <a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp/client/default/createorder" class="button container p-3 d-flex justify-content-center ">
+        <a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp1/client/default/createorder" class="button container p-3 d-flex justify-content-center ">
             <div class="row">
                 <div class="col align-self-center">
                     <span class="material-icons">
@@ -12,7 +12,7 @@
         </a>
     </div>
     <div class="col-md-3 p-0 d-flex">
-        <a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp/client" class="button container p-3 d-flex justify-content-center ">
+        <a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp1/client" class="button container p-3 d-flex justify-content-center ">
 
             <div class="row">
                 <div class="col align-self-center">
@@ -25,7 +25,7 @@
         </a>
     </div>
     <div class="col-md-3 p-0 d-flex">
-        <a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp/client/default/unsent" class="button container p-3 d-flex justify-content-center ">
+        <a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp1/client/default/unsent" class="button container p-3 d-flex justify-content-center ">
 
             <div class="row">
                 <div class="col align-self-center">
@@ -51,7 +51,7 @@
         </a>
     </div>
     <div class="col-md-3 p-0 d-flex">
-        <a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp/client/default/yetpay" class="button container p-3 d-flex justify-content-center ">
+        <a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp1/client/default/yetpay" class="button container p-3 d-flex justify-content-center ">
 
             <div class="row">
                 <div class="col align-self-center">
@@ -84,7 +84,7 @@
     <div class="container bg-dark rounded-lg pt-5 pb-5">
     <p style="font-size: 24px;color:white">Nội dung đơn</p>
         <textarea class="w-100 mb-md-4 mb-3 rounded-lg" name="contentorder" form="createorder" placeholder="nội dung đơn bôm gồm thông tin, địa chỉ nhận, thêm ghi chú nếu cần thiết"></textarea>
-        <form  id="createorder" action="http://<?php echo $GLOBALS['HOST']; ?>/webapp/client/performcreateorder" method="POST">
+        <form  id="createorder" action="http://<?php echo $GLOBALS['HOST']; ?>/webapp1/client/performcreateorder" method="POST">
             <div class="form-group pb-3">
                 <label style="font-size: 24px" for="inp">Giá</label>
                 <input type="text" class="form-control" id="fb" name="price" placeholder="Giá của đơn">

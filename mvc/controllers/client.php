@@ -9,11 +9,11 @@ class client extends Controller
         if (isset($_SESSION['user'])) {
             $this->user = $_SESSION['user'];
             if (!$this->md->isClient($this->user)) {
-                header("Location:http://{$GLOBALS['HOST']}/webapp/admin");
+                header("Location:http://{$GLOBALS['HOST']}/webapp1/admin");
             }
         }
         if (!isset($_SESSION['user'])) {
-            header("Location:http://{$GLOBALS['HOST']}/webapp/login");
+            header("Location:http://{$GLOBALS['HOST']}/webapp1/login");
         } else {
         }
     }
@@ -58,7 +58,7 @@ class client extends Controller
         $str = trim(htmlspecialchars(filter_var($_POST['search'], FILTER_SANITIZE_STRING)));
         $data = $this->md->getSearch($str, $this->user);
         if (empty($_SESSION['user'])) {
-            header("Location:http://{$GLOBALS['HOST']}/webapp/login");
+            header("Location:http://{$GLOBALS['HOST']}/webapp1/login");
         }
         $Notices = $this->md->getNotices($this->user);
         $this->view('layoutclient', ['page' => 'managerclientbill', 'data' => $data, 'notice' => $Notices]);
@@ -90,7 +90,7 @@ class client extends Controller
                     <script>
                         alert('Tạo đơn thành công');
                         setTimeout(function(){
-                            window.location = 'http://{$GLOBALS['HOST']}/webapp/client';
+                            window.location = 'http://{$GLOBALS['HOST']}/webapp1/client';
                         }, 500);
 
                     </script>
@@ -100,7 +100,7 @@ class client extends Controller
                     <script>
                         alert('Tạo đơn thất bại, vui lòng nhập đủ thông tin');
                         setTimeout(function(){
-                            window.location = 'http://{$GLOBALS['HOST']}/webapp/client/default/createorder';
+                            window.location = 'http://{$GLOBALS['HOST']}/webapp1/client/default/createorder';
                         }, 1000);
                     </script>
                 ";

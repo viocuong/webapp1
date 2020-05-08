@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-3 p-0 d-flex">
-        <a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp/client/default/createorder" class="button container p-3 d-flex justify-content-center ">
+        <a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp1/client/default/createorder" class="button container p-3 d-flex justify-content-center ">
             <div class="row">
                 <div class="col align-self-center">
                     <span class="material-icons">
@@ -12,7 +12,7 @@
         </a>
     </div>
     <div class="col-md-3 p-0 d-flex">
-        <a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp/client" class="button container p-3 d-flex justify-content-center ">
+        <a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp1client" class="button container p-3 d-flex justify-content-center ">
 
             <div class="row">
                 <div class="col align-self-center">
@@ -25,7 +25,7 @@
         </a>
     </div>
     <div class="col-md-3 p-0 d-flex">
-        <a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp/client/default/unsent" class="button container p-3 d-flex justify-content-center ">
+        <a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp1/client/default/unsent" class="button container p-3 d-flex justify-content-center ">
 
             <div class="row">
                 <div class="col align-self-center">
@@ -51,7 +51,7 @@
         </a>
     </div>
     <div class="col-md-3 p-0 d-flex">
-        <a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp/client/default/yetpay" class="button container p-3 d-flex justify-content-center ">
+        <a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp1/client/default/yetpay" class="button container p-3 d-flex justify-content-center ">
 
             <div class="row">
                 <div class="col align-self-center">
@@ -147,7 +147,7 @@
                             echo "</tr>";
                             echo "<tr id='option{$row['id_order']}' class='tb_option'><td class='d-flex flex-column'>";
                             
-                            echo "<a href='http://{$GLOBALS['HOST']}/webapp/admin/cancel/{$row['id_order']}' class='m-2 btn btn-danger'>Hủy đơn</a>";
+                            echo "<a href='http://{$GLOBALS['HOST']}/webapp1/admin/cancel/{$row['id_order']}' class='m-2 btn btn-danger'>Hủy đơn</a>";
                             echo "</td></tr>";
                         }
                     }
