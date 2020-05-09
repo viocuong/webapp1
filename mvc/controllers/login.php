@@ -14,7 +14,7 @@
                     if(!empty($resutl)){
                         $arr=$md->getData($username,$password);
                         $lever=$arr['lever'];
-                        $_SESSION['user']=$username;
+                        $_SESSION['usernew']=$username;
                         if($lever==1){
                             header('Location: admin');
                         }

@@ -5,10 +5,10 @@
         function __construct()
         {
             $this->md=$this->requireModel('adminModel');
-            if(empty($_SESSION['user'])){
+            if(empty($_SESSION['usernew'])){
                 header("Location:http://{$GLOBALS['HOST']}/webapp1/login");
             }
-            else $user=$_SESSION['user'];
+            else $user=$_SESSION['usernew'];
             if(!$this->md->isAdmin($user)){
                 header("Location:http://{$GLOBALS['HOST']}/webapp1/client");
             }
@@ -34,7 +34,7 @@
             header('Location:../../admin');
         }
         public function home(){
-            if(empty($_SESSION['user'])){
+            if(empty($_SESSION['usernew'])){
                 header("Location:../login");
             }
             $data=$this->md->getAllListOrder();
@@ -44,14 +44,14 @@
         public function search(){
             $str=trim(htmlspecialchars(filter_var($_POST['search'],FILTER_SANITIZE_STRING)));
             $data=$this->md->getSearch($str);
-            if(empty($_SESSION['user'])){
+            if(empty($_SESSION['usernew'])){
                 header("Location:http://{$GLOBALS['HOST']}/webapp1/login");
             }
             $Notices=$this->md->getNotices();
             $this->view('layoutadmin',['page'=>'managerbill','data'=>$data,'notice'=>$Notices]);
         }   
         public function edit($idOrder){
-            if(empty($_SESSION['user'])){
+            if(empty($_SESSION['usernew'])){
                 header("Location:http://{$GLOBALS['HOST']}/webapp1/login");
             }
             $data=$this->md->getOrder($idOrder);

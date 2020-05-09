@@ -23,7 +23,7 @@
     <div id="menuleft" class="menu">
         <div class="h3 pt-5 " style="text-align: center;color:#ffffff;font-family:'Bangers', cursive;">Bán hàng năm châu</div>
         <div class="" style="text-align: center">
-            <a class="" href="" style="color:#ffffff;text-decoration: none;"><span style="vertical-align: middle;" class="material-icons">person</span>xin chào <?php echo $_SESSION['user'] ?></a>
+            <a class="" href="" style="color:#ffffff;text-decoration: none;"><span style="vertical-align: middle;" class="material-icons">person</span>xin chào <?php echo $_SESSION['usernew'] ?></a>
         </div>
 
         <nav class="mt-3">

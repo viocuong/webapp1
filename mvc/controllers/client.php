@@ -6,13 +6,13 @@ class client extends Controller
     function __construct()
     {
         $this->md = $this->requireModel('clientModel');
-        if (isset($_SESSION['user'])) {
-            $this->user = $_SESSION['user'];
+        if (isset($_SESSION['usernew'])) {
+            $this->user = $_SESSION['usernew'];
             if (!$this->md->isClient($this->user)) {
                 header("Location:http://{$GLOBALS['HOST']}/webapp1/admin");
             }
         }
-        if (!isset($_SESSION['user'])) {
+        if (!isset($_SESSION['usernew'])) {
             header("Location:http://{$GLOBALS['HOST']}/webapp1/login");
         } else {
         }
@@ -45,7 +45,7 @@ class client extends Controller
     }
     public function home()
     {
-        if (empty($_SESSION['user'])) {
+        if (empty($_SESSION['usernew'])) {
             header("Location:../login");
         }
         $data = $this->md->getAllListOrder();
@@ -56,7 +56,7 @@ class client extends Controller
     {
         $str = trim(htmlspecialchars(filter_var($_POST['search'], FILTER_SANITIZE_STRING)));
         $data = $this->md->getSearch($str, $this->user);
-        if (empty($_SESSION['user'])) {
+        if (empty($_SESSION['usernew'])) {
             header("Location:http://{$GLOBALS['HOST']}/webapp1/login");
         }
         $Notices = $this->md->getNotices($this->user);
@@ -69,7 +69,7 @@ class client extends Controller
             $linkfb = trim($_POST['linkfb']);
             $price = trim($_POST['price']);
             $this->md->createorder($content, $price, $linkfb, $this->user);
-            //////////// Send massage//////////////////////////
+            ////////// Send massage//////////////////////////
             $ch = curl_init(); 
             //** Bước 2: Thiết lập các tuỳ chọn
             // Thiết lập URL trong request
