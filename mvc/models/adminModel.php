@@ -54,5 +54,13 @@
             $this->conn->query("UPDATE tb_order SET content='{$content}',price={$price} where id_order={$idorder}");
             
         }
+        public function getListAccount(){
+            $data=$this->conn->query("SELECT DISTINCT tb_account.userName FROM tb_account,tb_order WHERE tb_account.userName=tb_order.userName");
+            return $data;
+        }
+        public function getListOrder($user){
+            $result=$this->conn->query("SELECT tb_account.userName,tb_order.id_order,tb_order.status_tranport,tb_order.status_pay from tb_order,tb_account where tb_order.userName=tb_account.userName and tb_order.userName='{$user}'");
+            return $result;
+        }
     }
 ?>

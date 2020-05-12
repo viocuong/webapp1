@@ -71,5 +71,33 @@
                 header("Location: http://{$GLOBALS['HOST']}/webapp1/admin");
             }
         }
+        public function statistical(){
+            $data=[];
+            $Notices=$this->md->getNotices();
+            $listAccount=$this->md->getListAccount();
+            if($listAccount->num_rows>0){
+                $i=0;
+                while($row=$listAccount->fetch_assoc()){
+                    $orders=$this->md->getListOrder($row['userName']);
+                    $sumorder = $sent = $paid  = 0;
+                    $arr=[];
+                    if($orders->num_rows>0){
+                        $sumorder=$orders->num_rows;
+                        while($order=$orders->fetch_assoc()){
+                            if($order['status_tranport']==2) $sent++;
+                            if($order['status_pay']==2) $paid++;
+                        }
+                        $arr['user']=$row['userName'];
+                        $arr['sumorder']=$sumorder;
+                        $arr['sent']=$sent;
+                        $arr['paid']=$paid;
+                    }
+                    $data[$i]=$arr;
+                    $i++;
+                    
+                }
+            }
+            $this->view('layoutadmin',['page'=>'managerstatistical','data'=>$data,'notice'=>$Notices]);
+        }
     }
 ?>

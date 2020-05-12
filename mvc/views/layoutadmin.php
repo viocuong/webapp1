@@ -28,7 +28,7 @@
 
         <nav class="mt-3">
             <ul class="p-2">
-                <li><a href="" class="btn-menu p-3">Trả lương</a><span style="color: red;font-size: 10px">đang hoàn thiện</span></li>
+                <li><a href="http://<?php echo $GLOBALS['HOST'];?>/webapp1/admin/statistical" class="btn-menu p-3">Thống kê</a><span style="color: red;font-size: 10px">
                 <li><a href="" class="btn-menu p-3">Mặt hàng</a><span style="color: red;font-size: 10px"> đang hoàn thiện</span></li>
                 <li><a href="http://<?php echo $GLOBALS['HOST']; ?>/webapp1/logout" class="btn-menu p-3">Đăng xuất</a></li>
             </ul>
